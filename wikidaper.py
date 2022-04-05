@@ -45,7 +45,7 @@ class Wikidaper:
     def __init__(self,url:str):
         """
             On initialise avec :
-                - une URL renseignée par l'utilisateur, de préférence copiée/collée depuis Wikipedia
+                - une URL renseignée par l'utilisateur, de préférence copiée/collée depuis le navigateur
                 - un booléen de validation de cette dernière
                 - une liste composée des tableaux classables trouvés sur la page
         """
