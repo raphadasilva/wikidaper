@@ -77,12 +77,10 @@ class Wikidaper:
             Cette fonction retourne une liste des tableaux classables trouvables sur une page Wikipedia.
             Elle reste vide s'il n'y a rien.
         """
-        l_tableaux=[]
         url=requests.get(self.url)
         soupe=BeautifulSoup(url.text, "lxml")
         regex=re.compile('^wikitable.+sortable.*')
-        for t in soupe.find_all("table", {"class" : regex}):
-            l_tableaux.append(t)
+        l_tableaux=[t for t in soupe.find_all("table", {"class" : regex})]
         return l_tableaux
 
     def describe(self):
